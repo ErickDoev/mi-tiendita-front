@@ -1,0 +1,46 @@
+<div>
+  <h1>Crear cuenta</h1>
+  <form [formGroup]="form" class="form">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre</mat-label>
+      <input type="text" formControlName="name" matInput>
+      @if (form.get('name')?.errors) {
+        <mat-error>Nombre no valido</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Apellido Paterno</mat-label>
+      <input type="text" formControlName="firstLastName" matInput>
+      @if (form.get('firstLastName')?.errors) {
+        <mat-error>Apellido Paterno no valido</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Apellido Materno</mat-label>
+      <input type="text" formControlName="secondLastName" matInput>
+      @if (form.get('secondLastName')?.errors) {
+        <mat-error>Apellido Materno no valido</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input type="email" formControlName="email" matInput>
+      @if (form.get('email')?.errors) {
+        <mat-error>Correo no valido</mat-error>
+      }
+    </mat-form-field>
+
+      <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input type="password" formControlName="password" matInput>
+      @if (form.get('password')?.errors) {
+        <mat-error>Correo no valido</mat-error>
+      }
+    </mat-form-field>
+  </form>
+  <p>¿Tienes una cuenta con nosotros? <a class="link" (click)="onRedirect()">Inicia sesión</a></p>
+</div>

@@ -1,0 +1,21 @@
+<div>
+  <h1>Inicio de sesión</h1>
+  <form [formGroup]="form" class="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input type="email" formControlName="email" matInput>
+      @if (form.get('email')?.errors) {
+        <mat-error>Correo no valido</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Contraseña</mat-label>
+      <input type="password" formControlName="password" matInput>
+      @if (form.get('password')?.errors) {
+        <mat-error>contraseña no valida</mat-error>
+      }
+    </mat-form-field>
+  </form>
+  <p>O <a class="link" (click)="onRedirect()">Crea una cuenta</a></p>
+</div>
