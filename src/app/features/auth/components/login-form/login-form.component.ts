@@ -4,6 +4,7 @@ import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import { MatError, MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -21,8 +22,11 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginFormComponent {
+
   router = inject(Router);
   fb = inject(FormBuilder);
+  authService = inject(AuthService);
+
   form = this.fb.group({
     email: ['erick.doev@gmail.com', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
     password: ['P@lom@lun@1234', [Validators.required]]
@@ -32,5 +36,23 @@ export class LoginFormComponent {
     this.router.navigate(['auth/signin']);
   }
 
+  onSubmit():void {
+    console.log(this.form.value);
+
+    if(this.form.invalid) return;
+    const payload = {
+      email: this.form.controls.email.value,
+      password: this.form.controls.password.value
+    };
+    this.authService.login(payload).subscribe({
+      next: (resp) => {
+        console.log(resp);
+      },
+      error: (error) => {
+        console.log(error);
+
+      }
+    });
+  }
 
  }

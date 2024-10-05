@@ -1,6 +1,6 @@
 <div>
   <h1>Crear cuenta</h1>
-  <form [formGroup]="form" class="form">
+  <form [formGroup]="form" class="form" (ngSubmit)="onSubmit()">
 
     <mat-form-field appearance="outline">
       <mat-label>Nombre</mat-label>
@@ -41,6 +41,10 @@
         <mat-error>Correo no valido</mat-error>
       }
     </mat-form-field>
+    <div>
+      <button type="reset">Cancelar</button>
+      <button type="submit">Iniciar sesión</button>
+    </div>
   </form>
   <p>¿Tienes una cuenta con nosotros? <a class="link" (click)="onRedirect()">Inicia sesión</a></p>
 </div>

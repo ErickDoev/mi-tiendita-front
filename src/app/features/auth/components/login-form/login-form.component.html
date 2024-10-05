@@ -1,6 +1,6 @@
 <div>
   <h1>Inicio de sesión</h1>
-  <form [formGroup]="form" class="form">
+  <form [formGroup]="form" class="form" (ngSubmit)="onSubmit()">
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
       <input type="email" formControlName="email" matInput>
@@ -16,6 +16,10 @@
         <mat-error>contraseña no valida</mat-error>
       }
     </mat-form-field>
+    <div>
+      <button type="reset">Cancelar</button>
+      <button type="submit">Iniciar sesión</button>
+    </div>
   </form>
   <p>O <a class="link" (click)="onRedirect()">Crea una cuenta</a></p>
 </div>

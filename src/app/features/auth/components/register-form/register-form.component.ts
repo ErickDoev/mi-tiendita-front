@@ -4,6 +4,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatError, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register-form',
@@ -20,8 +21,11 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegisterFormComponent implements OnInit{
-    router = inject(Router);
+
+  router = inject(Router);
   fb = inject(FormBuilder);
+  authService = inject(AuthService);
+
   form = this.fb.group({
     name: ['', [Validators.required]],
     firstLastName: ['', [Validators.required]],
@@ -48,6 +52,25 @@ export class RegisterFormComponent implements OnInit{
         if (!expressionText.test(control.value || '')) {
           control.setValue(control.value.match(/([a-zA-ZÁáÉéÍíÓóÚúÑñÄËÖÜäëöü\s])/g)?.join(''));
         }
+      }
+    });
+  }
+
+  onSubmit():void {
+    if(this.form.invalid) return;
+    const payload = {
+      userName: this.form.controls.name.value,
+      firstLastName: this.form.controls.firstLastName.value,
+      secondLastName: this.form.controls.secondLastName.value,
+      email: this.form.controls.email.value,
+      password: this.form.controls.password.value
+    };
+    this.authService.register(payload).subscribe({
+      next: (resp) => {
+        console.log(resp);
+      },
+      error: (error) => {
+        console.log(error);
       }
     });
   }
