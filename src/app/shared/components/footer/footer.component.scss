@@ -5,8 +5,17 @@
 .footer {
   display: flex;
   flex-direction: column;
-  width: 100%;
   justify-content: center;
+  padding: 60px 0;
+  width: 100%;
+  background-color: #ba005c;
+  color: #fff8f8;
+
+  &-title {
+    font-size: 16px;
+    font-weight: 600;
+
+  }
 
   &-row {
     width: 100%;
@@ -21,5 +30,32 @@
     width: 277px;
     display: flex;
     flex-direction: column;
+
+    & p {
+      font-size: 14px;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+  }
+
+  &-logos {
+    padding: 40px 0px;
+    gap: 24px;
+  }
+
+  &-payments {
+    padding: 40px 0px;
+    gap: 12px;
+  }
+
+  &-logo {
+    height: 24px;
+  }
+
+  &-info {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: -24px;
   }
 }

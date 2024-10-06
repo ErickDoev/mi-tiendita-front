@@ -2,13 +2,13 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-top-bar',
+  selector: 'app-topbar',
   standalone: true,
   imports: [
     CommonModule,
   ],
-  templateUrl: './top-bar.component.html',
-  styleUrl: './top-bar.component.scss',
+  templateUrl: './topbar.component.html',
+  styleUrl: './topbar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TopBarComponent { }
+export class TopbarComponent { }

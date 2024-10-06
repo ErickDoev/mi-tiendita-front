@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import materialModules from '../../modules/angular-material-modules';
-import { TopBarComponent } from '../../components/top-bar/top-bar.component';
 import { SidenavComponent } from '../../components/sidenav/sidenav.component';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { TopbarComponent } from '../../components/topbar/topbar.component';
 
 @Component({
   selector: 'app-layout',
@@ -13,9 +13,9 @@ import { FooterComponent } from '../../components/footer/footer.component';
     CommonModule,
     RouterOutlet,
     materialModules,
-    TopBarComponent,
     SidenavComponent,
-    FooterComponent
+    FooterComponent,
+    TopbarComponent
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',

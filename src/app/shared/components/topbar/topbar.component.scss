@@ -1,0 +1,18 @@
+:host {
+  display: block;
+}
+
+.topbar {
+  background-color: #ba005c;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 46px;
+
+  &-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff8f8;
+  }
+}
