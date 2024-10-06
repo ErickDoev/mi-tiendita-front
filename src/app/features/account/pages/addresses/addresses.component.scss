@@ -1,9 +1,9 @@
 :host {
-  height: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 32px 92px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 32px 92px;
 }
 
 .profile {
@@ -26,10 +26,36 @@
   }
 
   &-card {
-    width: 130px;
+    width: 255px;
+    height: 255px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 12px;
+
+    &__footer {
+      margin-top: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between
+    }
+  }
+
+  &-actions {
+    padding-top: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  &-address {
+    width: 255px;
+    height: 255px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   &-form-control {
@@ -51,6 +77,15 @@
     font-weight: 400;
     line-height: 12px;
     margin-bottom: 2px;
+
+    &-center {
+      text-align: center;
+    }
+  }
+
+  &-icon {
+    width: 24px;
+    height: 24px;
   }
 }
 
