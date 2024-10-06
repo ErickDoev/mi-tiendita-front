@@ -1,0 +1,91 @@
+<div class="profile">
+  <div class="profile-cards">
+    <div class="profile-card card">
+      <span>Direcciones</span>
+      <span>0</span>
+    </div>
+    <div class="profile-card card">
+      <span>Pedidos</span>
+      <span>0</span>
+    </div>
+  </div>
+  <div>
+    <form [formGroup]="form" class="profile-form">
+      <span class="profile-title">Información del perfil</span>
+      <div class="separator"></div>
+      <div class="profile-form-control">
+        <div class="profile-input">
+          <mat-label class="profile-label">Nombre</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" formControlName="name" matInput>
+            @if (form.get('name')?.errors) {
+              <mat-error>Nombre no valido</mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="profile-input">
+          <mat-label class="profile-label">Apellido Paterno</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" formControlName="firstLastName" matInput>
+            @if (form.get('firstLastName')?.errors) {
+              <mat-error>Apellido no valido</mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="profile-form-control">
+        <div class="profile-input">
+          <mat-label class="profile-label">Apellido Materno</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" formControlName="secondLastname" matInput>
+            @if (form.get('secondLastname')?.errors) {
+              <mat-error>Apellido no valido</mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="profile-input">
+          <mat-label class="profile-label">Fecha de nacimiento</mat-label>
+          <mat-form-field>
+            <mat-label>Choose a date</mat-label>
+            <input matInput formControlName="birthday" [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <span class="profile-title">Métodos de contacto</span>
+      <div class="separator"></div>
+      <div class="profile-form-control">
+        <div class="profile-input">
+          <mat-label class="profile-label">Correo electrónico</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" formControlName="email" matInput>
+            @if (form.get('email')?.errors) {
+              <mat-error>Correo no valido</mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="profile-input">
+          <mat-label class="profile-label">Número de telefono</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" formControlName="phoneNumber" matInput>
+            @if (form.get('phoneNumber')?.errors) {
+              <mat-error>Fecha de nacimiento no valida</mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <span class="profile-title">Otra información</span>
+      <div class="separator"></div>
+      <div class="profile-form-control">
+        <mat-checkbox formControlName="accept">Acepta marketing de la tienda</mat-checkbox>
+      </div>
+      <div class="buttons">
+        <button mat-flat-button class="btn">Aceptar</button>
+        <button mat-flat-button class="btn">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+</div>

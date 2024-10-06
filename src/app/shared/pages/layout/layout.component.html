@@ -1,0 +1,39 @@
+<mat-sidenav-container style="height: 100%; background-color: white;">
+  <mat-sidenav
+    #drawer
+    mode="side"
+    class="sidenav"
+    [fixedInViewport]="false"
+    opened="false"
+  >
+    <mat-nav-list>
+      <mat-list>
+        <a mat-list-item>d</a>
+      </mat-list>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <a>Perfil</a>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <a mat-list-item (click)="onRedirect('account/profile')">Cuenta</a>
+            <a mat-list-item>asdasd</a>
+          </mat-list>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar style="background-color: blue;">
+      <mat-toolbar-row>
+        <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+        <div class="logo">
+          <div class="logo-img"></div>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <router-outlet />
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -7,13 +7,17 @@ export const routes: Routes = [
     loadChildren: () => import('./features/auth/auth.routes')
   },
   {
+    path: '',
+    loadComponent: () => import('./shared/pages/layout/layout.component').then(c => c.LayoutComponent),
+    children: [
+      {
+        path: 'account',
+        loadChildren: () => import('./features/account/account.routes')
+      }
+    ]
+  },
+  {
     path: '**',
     redirectTo: 'auth/login'
   }
-  // {
-  //   path: 'dashboard',
-  // },
-  // {
-  //   path: ''
-  // }
 ];
