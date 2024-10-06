@@ -2,14 +2,14 @@
   <h1 class="profile-title">Mis Direcciones</h1>
   <div class="separator"></div>
   <div class="profile-cards">
-    <div class="card profile-card">
+    <div class="card profile-card" role="button" (click)="onRedirect('account/address/add')">
       <svg class="profile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
         <circle cx="12" cy="10" r="3"></circle>
       </svg>
       <p class="profile-label profile-label-center">Añadir nueva dirección</p>
     </div>
-    <div class="card profile-address">
+    <div class="card profile-address" role="button" (click)="onRedirect('account/address/097987897/edit')">
       <p class="profile-title">Erick Elliut Cruz Padilla</p>
       <p class="profile-label">Av. Juarez 94a, San Esteban Tizatlan</p>
       <p class="profile-label">Tlaxcala</p>

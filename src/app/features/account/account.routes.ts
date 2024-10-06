@@ -8,6 +8,14 @@ export const routes: Routes = [
   {
     path: 'addresses',
     loadComponent: () => import('./pages/addresses/addresses.component').then(c => c.AddressesComponent)
+  },
+  {
+    path: 'address/add',
+    loadComponent: () => import('./pages/edit-address/edit-address.component').then(c => c.EditAddressComponent)
+  },
+  {
+    path: 'address/:id/edit',
+    loadComponent: () => import('./pages/edit-address/edit-address.component').then(c => c.EditAddressComponent)
   }
 ];
 

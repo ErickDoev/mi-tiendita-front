@@ -1,0 +1,123 @@
+<div class="profile">
+  <h1 class="profile-title">Agregar dirección</h1>
+  <div class="separator"></div>
+  <div>
+    <form [formGroup]="form" class="profile-form">
+      <div class="profile-form-control">
+        <div class="profile-input">
+          <mat-label class="profile-label">Nombre</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" formControlName="name" matInput>
+            @if (form.get('name')?.errors) {
+              <mat-error>Nombre no valido</mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="profile-input">
+          <mat-label class="profile-label">Apellido Paterno</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" formControlName="firstLastName" matInput>
+            @if (form.get('firstLastName')?.errors) {
+              <mat-error>Apellido no valido</mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="profile-form-control">
+        <div class="profile-input">
+          <mat-label class="profile-label">Apellido Materno</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" formControlName="secondLastname" matInput>
+            @if (form.get('secondLastname')?.errors) {
+              <mat-error>Apellido no valido</mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="profile-form-control">
+        <div class="profile-input-full">
+          <mat-label class="profile-label">Dirección</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" formControlName="address" matInput>
+            @if (form.get('address')?.errors) {
+              <mat-error>Dirección no valida</mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="profile-form-control">
+        <div class="profile-input-full">
+          <mat-label class="profile-label">Apartemento, suite, etc.</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" formControlName="addressExtra" matInput>
+            @if (form.get('addressExtra')?.errors) {
+              <mat-error>Campo no valido</mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="profile-form-control">
+        <div class="profile-input">
+          <mat-label class="profile-label">País</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" formControlName="country" matInput>
+            @if (form.get('country')?.errors) {
+              <mat-error>Campo no valido</mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="profile-input">
+          <mat-label class="profile-label">Estado</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" formControlName="state" matInput>
+            @if (form.get('state')?.errors) {
+              <mat-error>Estado no valido</mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="profile-form-control">
+        <div class="profile-input">
+          <mat-label class="profile-label">Ciudad</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" formControlName="city" matInput>
+            @if (form.get('city')?.errors) {
+              <mat-error>Campo no valido</mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="profile-input">
+          <mat-label class="profile-label">Código Postal</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" formControlName="cp" matInput>
+            @if (form.get('cp')?.errors) {
+              <mat-error>Código Postal no valido</mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="profile-form-control">
+        <div class="profile-input-full">
+          <mat-label class="profile-label">Número de telefono</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" formControlName="addressPhone" matInput>
+            @if (form.get('addressPhone')?.errors) {
+              <mat-error>Número de telefono no valido</mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="profile-form-control">
+        <mat-checkbox formControlName="isDefault">Establecer como dirección predeterminada</mat-checkbox>
+      </div>
+      <div class="buttons">
+        <button mat-flat-button class="btn">Aceptar</button>
+        <button mat-flat-button class="btn">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+</div>

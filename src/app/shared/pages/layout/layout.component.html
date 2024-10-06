@@ -20,8 +20,42 @@
             <a>Perfil</a>
           </mat-expansion-panel-header>
           <mat-list>
-            <a mat-list-item class="p-0" (click)="onRedirect('account/profile')">Cuenta</a>
-            <a mat-list-item class="p-0" (click)="onRedirect('account/addresses')">Direcciones</a>
+            <a mat-list-item class="p-0" (click)="onRedirect('account/profile')">
+              <div class="item">
+                <mat-icon>person_outline</mat-icon>
+                <span>Cuenta</span>
+              </div>
+            </a>
+            <a mat-list-item class="p-0" (click)="onRedirect('account/addresses')">
+              <div class="item">
+                <mat-icon>inventory</mat-icon>
+                <span>Mis Pedidos</span>
+              </div>
+            </a>
+            <a mat-list-item class="p-0" (click)="onRedirect('account/addresses')">
+              <div class="item">
+                <mat-icon>favorite_border</mat-icon>
+                <span>Favoritos</span>
+              </div>
+            </a>
+            <a mat-list-item class="p-0" (click)="onRedirect('account/addresses')">
+              <div class="item">
+                <mat-icon>add_location</mat-icon>
+                <span>Direcciones</span>
+              </div>
+            </a>
+            <a mat-list-item class="p-0" (click)="onRedirect('account/addresses')">
+              <div class="item">
+                <mat-icon>key</mat-icon>
+                <span>Modificar contraseña</span>
+              </div>
+            </a>
+            <a mat-list-item class="p-0" (click)="onRedirect('account/addresses')">
+              <div class="item">
+                <mat-icon>logout</mat-icon>
+                <span>Cerrar sesión</span>
+              </div>
+            </a>
           </mat-list>
 
         </mat-expansion-panel>
@@ -48,8 +82,8 @@
     <div class="pages">
       <router-outlet />
       <div class="separator"></div>
-      <app-footer />
     </div>
 
   </mat-sidenav-content>
 </mat-sidenav-container>
+<app-footer />
