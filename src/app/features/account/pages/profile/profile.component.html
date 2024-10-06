@@ -54,6 +54,18 @@
           </mat-form-field>
         </div>
       </div>
+      <div class="profile-form-control">
+        <div class="profile-input">
+          <mat-form-field appearance="outline">
+            <mat-label>Genero</mat-label>
+            <select matNativeControl required>
+              @for (gender of genders(); track $index) {
+                <option [value]="gender.gender_id">{{gender?.gender_name}}</option>
+              }
+            </select>
+          </mat-form-field>
+        </div>
+      </div>
       <span class="profile-title">Métodos de contacto</span>
       <div class="separator"></div>
       <div class="profile-form-control">
@@ -79,7 +91,7 @@
       <span class="profile-title">Otra información</span>
       <div class="separator"></div>
       <div class="profile-form-control">
-        <mat-checkbox formControlName="accept">Acepta marketing de la tienda</mat-checkbox>
+        <mat-checkbox formControlName="acceptMarketing">Acepta marketing de la tienda</mat-checkbox>
       </div>
       <div class="buttons">
         <button mat-flat-button class="btn">Aceptar</button>

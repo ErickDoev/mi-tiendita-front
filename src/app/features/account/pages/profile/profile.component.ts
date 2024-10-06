@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import materialModules from '../../../../shared/modules/angular-material-modules';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AccountService } from '../../services/account.service';
+import { Gender } from '../../interfaces/gender';
 
 
 @Component({
@@ -20,6 +21,9 @@ export class ProfileComponent implements OnInit {
 
   private readonly accountService = inject(AccountService);
   private readonly fb = inject(FormBuilder);
+
+  genders = signal<Gender[]>([]);
+
   form = this.fb.group({
     name: ['Erick', [Validators.required]],
     firstLastName: ['Cruz', [Validators.required]],
@@ -28,11 +32,23 @@ export class ProfileComponent implements OnInit {
     gender: ['Male', [Validators.required]],
     email: ['erick@gmail.com', [Validators.required]],
     phoneNumber: ['2461761082', [Validators.required]],
-    accept: [false]
+    acceptMarketing: [false]
   });
 
   ngOnInit(): void {
-    this.getProfile();
+    this.getGender();
+  }
+
+  getGender(): void {
+    this.accountService.getUserGenders().subscribe({
+      next: (genders) => {
+        this.genders.set(genders);
+        this.getProfile();
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    });
   }
 
   getProfile(): void {
@@ -47,6 +63,8 @@ export class ProfileComponent implements OnInit {
           birthday: resp.birthday,
           email: resp.email,
           phoneNumber: resp.phone_number,
+          gender: resp.gender.gender_id,
+          acceptMarketing: resp.acceptMarketing
         });
       },
       error: (error) => {

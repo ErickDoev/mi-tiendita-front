@@ -4,21 +4,66 @@
 }
 
 .sidenav {
-  height: 100%;
-  min-width: 250px;
-  max-width: 300px;
-  background-color: white;
+  background-color: #fff8f8;
+
+  &-container {
+    border-right: solid 1px #e5e5e6;
+    border-radius: initial;
+  }
+
+  &-toolbar {
+    background-color: #fff8f8;
+    border-bottom: solid 1px  #e5e5e6;
+    height: 140px;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+
+    &__row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &-logo {
+    &__img {
+      width: 60px;
+      height: 60px;
+      background-color: black;
+      border-radius: 50%;
+    }
+  }
+
+  &-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
 }
 
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+.pages {
+  height: calc(100vh - 140px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-bottom: 0px !important;
+}
 
-  &-img {
-    width: 70px;
-    height: 60px;
-    background-color: black;
-  }
+.p-0 {
+  padding: 0;
+}
+
+.menu {
+  padding: 160px 16px 0 16px;
+}
+
+::ng-deep .mat-expansion-panel {
+  border-radius: initial !important;
+  box-shadow: none !important;
+}
+
+::ng-deep .mat-expansion-panel-header {
+  padding: 0 16px !important;
 }

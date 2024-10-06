@@ -4,6 +4,7 @@ import { Router, RouterOutlet } from '@angular/router';
 import materialModules from '../../modules/angular-material-modules';
 import { TopBarComponent } from '../../components/top-bar/top-bar.component';
 import { SidenavComponent } from '../../components/sidenav/sidenav.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
   selector: 'app-layout',
@@ -13,7 +14,8 @@ import { SidenavComponent } from '../../components/sidenav/sidenav.component';
     RouterOutlet,
     materialModules,
     TopBarComponent,
-    SidenavComponent
+    SidenavComponent,
+    FooterComponent
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
