@@ -1,0 +1,94 @@
+:host {
+  height: 500px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 32px 92px;
+}
+
+td {
+  height: 80px;
+}
+
+.profile {
+  width: 100%;
+
+  &-title {
+    color: #202202;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 12px 0;
+    display: block;
+  }
+
+  &-cards {
+    padding: 12px 0;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  &-card {
+    width: 255px;
+    height: 255px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    &__footer {
+      margin-top: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between
+    }
+  }
+
+  &-actions {
+    padding-top: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  &-address {
+    width: 255px;
+    height: 255px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &-form-control {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin: 10px 0;
+  }
+
+  &-input {
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+  }
+
+  &-label {
+    color: #202202;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 12px;
+    margin-bottom: 2px;
+
+    &-center {
+      text-align: center;
+    }
+  }
+
+  &-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
