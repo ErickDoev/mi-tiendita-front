@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { OrderDetailComponent } from './pages/order-detail/order-detail.component';
 
 export const routes: Routes = [
   {
@@ -22,9 +21,17 @@ export const routes: Routes = [
     path: 'orders',
     loadComponent: () => import('./pages/orders/orders.component').then(c => c.OrdersComponent)
   },
-    {
+  {
     path: 'order/:id/detail',
     loadComponent: () => import('./pages/order-detail/order-detail.component').then(c => c.OrderDetailComponent)
+  },
+  {
+    path: 'favorites',
+    loadComponent: () => import('./pages/favorites/favorites.component').then(c => c.FavoritesComponent)
+  },
+  {
+    path: 'change-password',
+    loadComponent: () => import('./pages/change-password/change-password.component').then(c => c.ChangePasswordComponent)
   }
 ];
 
